@@ -92,7 +92,7 @@
 						<td><input type="text" name="opno"></td>
 					
 						<td><b>Date of Admission:</b></td>
-						<td><input type="" name="date_of_admission"></td>
+						<td><input type="date" name="date_of_admission"></td>
 					
 						<td><b>Date of Discharge:</b></td>
 						<td><input type="date" name="date_of_discharge"></td>

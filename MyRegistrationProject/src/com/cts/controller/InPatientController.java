@@ -1,6 +1,7 @@
 package com.cts.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 
 import javax.servlet.ServletConfig;
@@ -72,6 +73,13 @@ public class InPatientController extends HttpServlet {
  
     	
         System.out.println(ips.addRecords(inpatient));
+        
+        PrintWriter pw = response.getWriter();
+        
+        for(InPatient i : ips.displayRecords())
+        {
+        	pw.println(i);
+        }
     	
 	}
 

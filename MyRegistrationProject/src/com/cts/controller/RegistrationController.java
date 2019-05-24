@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cts.bean.Registration;
-import com.cts.service.CoustomerService;
+//import com.cts.service.CoustomerService;
 import com.cts.service.InPatientRecordsServiceImpl;
 import com.cts.service.RegistrationRecordsService;
 import com.cts.service.RegistrationRecordsServiceImpl;

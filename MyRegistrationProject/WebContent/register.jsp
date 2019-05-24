@@ -5,16 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
 	<center>
 		<table>
 			<tr>
 				<h1>Registration</h1>
+				
 			</tr>
-		</table>  
+		</table>
 		<form action="RegistrationController" method="post">
-		<input type="hidden" name="source" value="addCustomer" />
+			<input type="hidden" name="source" value="addCustomer" />
 			<table>
 				<tr>
 					<td><b>Name:</b></td>
@@ -31,6 +35,7 @@
 					<td><input type="radio" name="sex" value="Male">Male</td>
 					<td><input type="radio" name="sex" value="Female">Female</td>
 				</tr>
+				<br>
 				<tr>
 					<td><b>Phone Number:</b></td>
 					<td><select>
@@ -38,15 +43,21 @@
 					</select> <input type="text" name="number"
 						placeholder="Enter your 10 digit mobile number"></td>
 				</tr>
+				<br>
 				<tr>
+				<div>
 					<td><b>Address:</b></td>
 					<td><textarea name="address" placeholder="Enter your address"></textarea></td>
+					</div>
 				</tr>
+				<br>
 				<tr>
 					<td><b>Departments:</b></td>
 					<td><input type="radio" name="dept" value="emergency">Emergency</td>
 					<td><input type="radio" name="dept" value="normal">Normal</td>
+					<br><br>
 				</tr>
+				
 				<tr>
 					<td><b>Patient As:</b></td>
 					<td><input type="radio" name="patient" id="stu" value="0"
@@ -54,11 +65,12 @@
 					<td><input type="radio" name="patient" id="emp" value="1"
 						onclick="ShowHideDiv()">Employee</td>
 				</tr>
-				
+				<br>
 				<tr>
 					<td><b>Password:</b></td>
 					<td><input type="password" name="pass"></td>
 				</tr>
+
 				<tr>
 					<td><b>ReType Password:</b></td>
 					<td><input type="password" name="retype"></td>
@@ -68,7 +80,7 @@
 					<td><a href="login.jsp"><b>Back</b></a></td>
 
 				</tr>
-				
+
 
 			</table>
 		</form>

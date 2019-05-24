@@ -1,11 +1,13 @@
 package com.cts.service;
 
 import com.cts.dao.InPatientRecordsDaoImpl;
+import com.cts.dao.RegistrationRecordsDaoImpl;
 
 public class RegistrationRecordsServiceImpl implements RegistrationRecordsService{
 	
 	public RegistrationRecordsServiceImpl(){
-		rdao = new RegistrationRecordsDaoImpl();
+		RegistrationRecordsDaoImpl rdao = new RegistrationRecordsDaoImpl();
+		
 	}
 
 }

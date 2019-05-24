@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cts.bean.Registration;
+<<<<<<< HEAD
 //import com.cts.service.CoustomerService;
+=======
+>>>>>>> branch 'master' of https://github.com/amitd94/Healthcare_Repository_pt2.git
 import com.cts.service.InPatientRecordsServiceImpl;
 import com.cts.service.RegistrationRecordsService;
 import com.cts.service.RegistrationRecordsServiceImpl;

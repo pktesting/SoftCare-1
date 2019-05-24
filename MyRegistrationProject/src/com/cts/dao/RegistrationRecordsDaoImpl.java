@@ -19,9 +19,10 @@ public class RegistrationRecordsDaoImpl implements RegistrationRecordsDao {
 	@Override
 	public boolean addRecords(Registration r) {
 		int result = 0;
+		
 		try {
 
-			s = con.prepareStatement("insert into TBL_REGISTRATION values(?,?,?,?,?,?,?,?,?)");
+			s = con.prepareStatement("insert into TBL_REGISTRATION(uname,age,gender) values(?,?,?,?,?,?,?,?)");
 			s.setString(1, r.getName());
 			s.setLong(2, r.getAge());
 			s.setString(3, r.getSex());

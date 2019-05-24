@@ -7,7 +7,10 @@ public class RegistrationRecordsServiceImpl implements RegistrationRecordsServic
 	
 	public RegistrationRecordsServiceImpl(){
 		RegistrationRecordsDaoImpl rdao = new RegistrationRecordsDaoImpl();
+<<<<<<< HEAD
 		
+=======
+>>>>>>> branch 'master' of https://github.com/amitd94/Healthcare_Repository_pt2.git
 	}
 
 }

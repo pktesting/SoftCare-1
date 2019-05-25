@@ -1,0 +1,9 @@
+CREATE TABLE tbl_beneficiary_in_patient (
+  opno VARCHAR2(10) ,
+  name VARCHAR2(20) not null,
+  age NUMBER(3) not null,
+  gender VARCHAR2(7) not null,
+  date_of_admission date not null,
+  date_of_discharge date not null,
+  diagnosis VARCHAR2(50) not null
+);

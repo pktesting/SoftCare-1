@@ -5,6 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Patient Information(Employee)</title>
+
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<style>
+body{
+	background-image: url('images/front1.jpg');
+	background-size: 100% 110%;
+	width: 100%;
+	height: 100vh;
+</style>
 </head>
 <body>
 	<center>
@@ -40,11 +49,11 @@
 				</tr>
 				<tr>
 					<td><b>Cause Of The Disease:</b></td>
-					<td><textarea type="text" id="cause" name="cause"></textarea></td>
+					<td><textarea type="text" id="cause" name="cause" style="width: 300px; height: 45px;"></textarea></td>
 				</tr>
 				<tr>
 					<td><b>Precautions:</b></td>
-					<td><textarea type="text" id="precautions" name="precautions"></textarea></td>
+					<td><textarea type="text" id="precautions" name="precautions" style="width: 300px; height: 45px;"></textarea></td>
 				</tr>
 				<tr>
 					<td><b>Disease Severeness:</b></td>
@@ -65,15 +74,17 @@
 						</div>
 						</td>
 						</tr>
+						<table>
 						<tr>
 						<td><b>Total:</b></td>
-						<td><input type="text" id="total" disabled>
-						<td><input type="button" value="Total"  onclick="TotalCharge()" >
+						<td><input type="text" id="total" disabled style="width: 160px; height: 20px;">
+						<td><input type="button" value="Total"  onclick="TotalCharge()" style="width: 100px; height: 50px; color: blue" >
 						</td>
 						</tr>
+						</table>
 				<tr>
-					<td><input type="submit" name="submit" value="Submit"></td>
-					<td><a href="patient_records.jsp"><b>Back</b></a></td>
+					<td><input type="submit" name="submit" value="Submit" style="width: 100px; height: 50px; color: blue"></td>
+					<td><a href="patient_records.jsp"><b><center>Back</center></b></a></td>
 
 				</tr>
 

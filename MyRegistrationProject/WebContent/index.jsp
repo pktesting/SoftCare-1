@@ -4,21 +4,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Soft Care</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 	
@@ -77,11 +62,12 @@
 								<ul>
 									<li class="active"><a href="index.jsp">Home</a></li>
 									
-									<li><a href="login.jsp">Login</a></li>
-									<li class="has-dropdown">
-										<a href="">About Us</a>
+									<li class="active"><a href="login.jsp">Login</a></li>
+									
+									<li class="active"><a href="pharmacy_daily_entries.jsp">Pharmacy</a></li>
+									<li class="active"><a href="">About Us</a></li>
 										
-									</li>
+									
 									
 								</ul>
 							</div>

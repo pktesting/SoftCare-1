@@ -6,69 +6,60 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Patient Records</title>
-</head><%--
-<body>
-<center>
-	<table>
-			<tr>
-				<h1>Patient Records</h1>
-			</tr>
-		</table>
-		<table>
-		<tr>
-		<td><a href="student_record.jsp">Student</td>
-		<td>||</td>
-		<td><a href="employee_record.jsp">Employee</td>
-		<td>||</td>
-		<td><a href="beneficiarie_record.jsp">Beneficiarie</td>
-		
-		</tr>
-		</table>
-	</center>
-</body>
-<body>--%>
 
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<style>
+body{
+	background-image: url('images/patient.jpg');
+	background-size: 100% 110%;
+	width: 100%;
+	height: 100vh;
+	margin:0 auto;
+</style>
+</head>
+<body>
+<div id ="wrap">
 	<table>
 			<tr>
-				<h1>In - Patient Records</h1>
+				<center><h1>In - Patient Records</h1></center>
 			</tr>
-		</table>
-		<%--<table>
-		<tr>
-		<td><a href="student_record.jsp">Student</td>
-		<td>||</td>
-		<td><a href="employee_record.jsp">Employee</td>
-		<td>||</td>
-		<td><a href="beneficiarie_record.jsp">Beneficiarie</td>
-		
-		</tr>
-	</table> --%>
+	</table>
 
 		<form action="InPatientController">
 			<table>
+			<col width="650">
+			<col width="200">
 				<tr>
 					<td><b>Name:</b></td>
 					<td>
 						<input type="text" name="patient_name" placeholder="Enter Patient Name">
 					</td>
-					
+					<br>
+					<table>
+					   <col width="650">
+			           <col width="200">
 					<td><b>Age:</b></td>
 					<td>
 					<input type="text" name="patient_age" placeholder="Enter Patient Age">
 					</td>
-					
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
 					<td><b>Patient Type:</b></td>
 					<td>
-						<select name="patientType">
+						<select name="patientType" style="width: 300px; height: 45px;">
 							<option value="student">Student</option>
 							<option value="beneficiary">Beneficiary</option>
 						</select>
-					</td>	
+					</td>
+			</table>	
 				
 				</tr>
-				</table>
 				<br>
-				<table>
+			<table>
+			<col width="650">
+			<col width="200">
 				<tr>
 					<td><b>Gender:</b></td>
 					<td>
@@ -84,33 +75,48 @@
     					</label>
 					</td>
 				</tr>
-				</table>
-				<table>
-				<br>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
+				
 					<tr>
 						<td><b>Op No:</b></td>
 						<td><input type="text" name="opno"></td>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
 					
 						<td><b>Date of Admission:</b></td>
-						<td><input type="date" name="date_of_admission"></td>
+						<td><input type="date" name="date_of_admission" style="width: 300px; height: 45px;"></td>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
 					
 						<td><b>Date of Discharge:</b></td>
-						<td><input type="date" name="date_of_discharge"></td>
+						<td><input type="date" name="date_of_discharge" style="width: 300px; height: 45px;"></td>
 					</tr>
-				</table>
-				<br><br>
-				<table>
+			</table>
+			
+			<table>
+			<col width="650">
+			<col width="200">
 					<tr>
 						<td><b>Diagnosis:</b></td>
 					</tr>
 					<tr>
 						<td>
+						
 								<textarea name="paragraph_text" cols="40" rows="5"></textarea>
 						</td>
 					</tr>
-				</table>
-				<br>
-				<table>
+			</table>
+				
+			<table>
+			<col width="650">
+			<col width="200">
 				<tr>
 					<td><b>Disease Severeness:</b></td>
 					<td><input type="radio" id="ward1" name="ward" value="1" onclick="ShowHideDiv()">Yes</td>
@@ -119,19 +125,24 @@
 				
 				<tr>
 				<td>
-				<div id="dv" style="display: none;">
+			</td>
+			</tr>
+			</table>
+			<div id="dv" style="display: none;">
 				<table>
+				<col width="650">
+			    <col width="200">
 				<tr>
 				<td><b>Isolation Ward No:</b></td>
 				<td><input type="text" id="ward" name="ward"></td>
 				</tr>
 				</table>
 				<br>
-				</div>
+			</div>
 				
 				<tr>
 					<td>
-						<input type="submit" name="submit" value="Submit">
+						<input type="submit" name="submit" value="Submit" style="width: 100px; height: 50px; color: blue">
 					</td>
 					
 					<td><a href="patient_records.jsp"><b>Back</b></a></td>
@@ -141,7 +152,7 @@
 
 			</table>
 		</form>
-	
+	</div>
 </body>
 <script>
 	function ShowHideDiv() {

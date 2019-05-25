@@ -5,6 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Drug Details</title>
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<style>
+body{
+	background-image: url('images/drugentry.jpg');
+	background-size: 100% 110%;
+	width: 100%;
+	height: 100vh;
+</style>
 </head>
 <body>
 <center>
@@ -33,14 +41,18 @@
 					<td><input type="text" name="edate2" placeholder="eg. mm/YYYY"></td>
 				</tr>
 				
-				
+				</table>
+				<table>
+				<col width="0">
+			    <col width="200">
+				<center>
 				<tr>
-					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><input type="submit" name="submit" value="Submit" style="width: 100px; height: 50px; color: blue"></td>
 					<!--<td><a href="login.jsp"><b>Back</b></a></td> --->
 					
 				</tr>
 				
-				
+				</center>
 			</table>
 		</form>
 	</center>

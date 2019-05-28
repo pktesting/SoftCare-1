@@ -8,7 +8,7 @@
 		
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		
-		if(session.getAttribute("patientLogin")==null || session.getAttribute("adminLogin")==null)
+		if(session.getAttribute("doctorLogin")==null && session.getAttribute("adminLogin")==null)
 		{
 			response.sendRedirect("login.jsp");
 		}
@@ -34,6 +34,7 @@ body{
 </style>
 </head>
 <center>
+<br><br><br><br><br><br>
 	<body>
 		<table border="2" bordercolor="white">
 			<tr bordercolor="white">
@@ -57,5 +58,9 @@ body{
 		</table>
 
 	</body>
+	<br><br>
+	<form action="index2.jsp" method="post">
+	<input type="submit" value="HOME">
+	</form>
 </center>
 </html>

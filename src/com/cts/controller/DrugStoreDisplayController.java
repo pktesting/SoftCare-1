@@ -3,6 +3,7 @@ package com.cts.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -40,28 +41,24 @@ public class DrugStoreDisplayController extends HttpServlet {
 		String drugname=request.getParameter("drug_name");	
 		System.out.println("inside controller " + drugname);
 		
-		PrintWriter pw=response.getWriter();
 		
-		try {
-			List<DrugStore> dx=drugservice.displayDrug(drugname);
-//			for(DrugStore dx1:dx)
-//			{
-//			pw.println(dx1.getDrugname());
-//			pw.println(dx1.getIn_stock());
-//			pw.println(dx1.getExp_date1());
-//			pw.println(dx1.getExp_date2());
-//			}
+		
+			List<DrugStore> dx;
+			try {
+				dx = drugservice.displayDrug(drugname);
+				request.setAttribute("drug", dx);
+				RequestDispatcher rd=request.getRequestDispatcher("Display_drug_details.jsp");
+				rd.forward(request, response);
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
-			request.setAttribute("drug", dx);
-			RequestDispatcher rd=request.getRequestDispatcher("Display_drug_details.jsp");
-			rd.forward(request, response);
 			
 			
 			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 			
 		
 	}

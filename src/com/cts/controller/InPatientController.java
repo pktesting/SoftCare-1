@@ -80,7 +80,7 @@ public class InPatientController extends HttpServlet {
 
 		System.out.println(ips.addRecords(inpatient));
 		
-		response.sendRedirect("InPatientDisplayController");
+		response.sendRedirect("reg_succ1.jsp");
 
 	}
 

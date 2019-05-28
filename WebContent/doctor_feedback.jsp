@@ -30,7 +30,6 @@ body{
 </style>
 </head>
 <body>
-<a href="index.jsp">HOME</a>
 	<center>
 		<form action="DoctorFeedbackController" method="post"
 			onsubmit="return validate()">
@@ -74,7 +73,13 @@ body{
 		}else if(feedback==""){
 			alert("This field shoule be filled out");
 			return false;
-		}else{
+		}
+		if(isNaN(did))
+			{
+			alert("Please enter ONLY your doctor's number");
+			return false;
+			}
+		else{
 			return true;
 		}
 	}

@@ -25,11 +25,24 @@ body {
 	width: 100%;
 	height: 100vh;
 }
+tr{
+color:white;
+}
 </style>
 </head>
 <body>
 	<center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 		<table border="2">
+		
+		
 			<h3>Daily Entry Details</h3>
 			<tr>
 				<td>Opno</td>
@@ -58,5 +71,12 @@ DailyEntry x=(DailyEntry)request.getAttribute("daentry");
 
 		</table>
 	</center>
+	<br>
+	<br><br>
+	<br>
+	<center> <form action="index.jsp" method="post">
+<input type="submit" value="HOME">
+</form>
+</center>
 </body>
 </html>

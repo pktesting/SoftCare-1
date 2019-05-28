@@ -81,6 +81,7 @@ public class loginRegisterController extends HttpServlet {
 		}
 		else {
 			System.out.println("error");
+			request.setAttribute("logu", null);
 			response.sendRedirect("login.jsp");
 		}
 	}

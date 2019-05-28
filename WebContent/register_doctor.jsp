@@ -11,7 +11,7 @@ function validate(){
 	var pnum = document.getElementById("phoneNumber").value;
 	var demail = document.getElementById("doctorEmail").value;
 	
-	if(did="")
+	if(did=="")
 		{
 		alert("Don't leave the ID field empty");
 		return false;
@@ -21,36 +21,37 @@ function validate(){
 		alert("ID should be a 3-digit positive number");
 		return false;
 		}
-	if(did>=99)
+	if(did<=99)
 		{
 		alert("ID should be a 3-digit positive number");
 		return false;
 		}
-// 	if(dname="")
-// 		{
-// 		alert("Don't leave the NAME field empty");
-// 		return false;
-// 		}
-// 	if(!dname.match(/[A-Za-z]+[\\s]{1}[A-Za-z]*/)==null)
-// 		{
-// 		alert("Only Alphabets are allowed in NAME field");
-// 		return false;
-// 		}
-// 	if(pnum="" || pnum<999999999)
-// 		{
-// 		alert("Please enter a 10 digit Phone Number");
-// 		return false;
-// 		}
-// 	if(demail="")
-// 		{
-// 		alert("Don't Leave the EMAIL field empty");
-// 		return false;
-// 		}
-// 	if(demail.match(/[A-Za-z0-9_.]+[@]{1}[A-Za-z].com/))
-// 		{
-// 		alert("Please enter a proper EMAIL ID");
-// 		return false;
-// 		}
+	if(dname=="")
+		{
+		alert("Don't leave the NAME field empty");
+		return false;
+		}
+	if(dname.match(/[A-Za-z]+/)==null)
+		{
+		alert("Only Alphabets are allowed in NAME field");
+		return false;
+		}
+	if(pnum=="" || pnum<999999999 || pnum.length>10)
+		{
+		alert("Please enter a 10 digit Phone Number");
+		return false;
+		}
+	if(demail=="")
+		{
+		alert("Don't Leave the EMAIL field empty");
+		return false;
+		}
+	if(demail.match(/[A-Za-z0-9_.]+[@]{1}[A-Za-z]*.com/)==null)
+		{
+		alert("Please enter a proper EMAIL ID");
+		return false;
+		}
+
 }
 
 </script>

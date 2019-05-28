@@ -14,7 +14,6 @@ body{
 	
 
 <body background="front_img.jpg">
-<a href="index.jsp">HOME</a>
 <center>
 <h1>Registration</h1>
 <br><br><br><br><br>

@@ -61,16 +61,9 @@
 							<div class="menu-1">
 								<ul>
 									
-									<li class="active"><a href="login.jsp">Login</a></li>
+									<li class ="active"><a href="InPatientDisplayController">View In-Records</a></li>
 
-									<li class="has-dropdown active">
-										<a href="#">In - Records</a>
-										<ul class="dropdown" style="display: none;">
-											<li><a href="in_patient_records.jsp">Add In-Records</a></li>
-											<li><a href="InPatientDisplayController">View In-Records</a></li>
-											
-										</ul>
-									</li>
+									
 									
 									
 									<li class="has-dropdown active">

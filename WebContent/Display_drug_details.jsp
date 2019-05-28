@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="com.cts.bean.DrugStore"%>
 <%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,12 +27,15 @@ body{
 	background-size: 100% 110%;
 	width: 100%;
 	height: 100vh;
+	}
+	table{
+	color:white;
+	}
 </style>
 </head>
 <body>
-<a href="index.jsp">HOME</a>
 	<center>
-		<table border="2">
+		<br><br><br><br><br><br><br><br><table border="2">
 
 			<h3>Stock Details</h3>
 			<tr>
@@ -59,6 +63,11 @@ body{
 			</tr>
 
 		</table>
+		<br><br>
+		<center> <form action="index.jsp" method="post">
+<input type="submit" value="HOME">
+</form>
+</center>
 	</center>
 </body>
 </html>

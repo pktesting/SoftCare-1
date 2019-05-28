@@ -38,7 +38,6 @@ body{
 </head>
 
 <body>
-<a href="index.jsp">HOME</a>
 <center>
 <form action="DrugStoreDisplayController" method="post"
 			onsubmit="return validate()">

@@ -61,7 +61,7 @@ public class DrugRecordsDaoImpl implements DrugStoreRecordsDao {
 
 		try {
 
-			ps = con.prepareStatement("select *from table_Mainstore where drug_name=?");
+			ps = con.prepareStatement("select *from tbl_Mainstore where drug_name=?");
 			ps.setString(1, drugname);
 		
 			ResultSet res = ps.executeQuery();

@@ -49,6 +49,7 @@ body{
 			<%
 				List<InPatient> al ;
 				al = (List<InPatient>) request.getAttribute("InPatientDisplay");
+				
 				for (InPatient i : al) {
 				
 					

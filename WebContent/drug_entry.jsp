@@ -51,6 +51,11 @@ body{
 		  alert("In_Stock must be filled out");
 		  return false;
 		  }
+	   if(isNaN(stock))
+		   {
+		   alert("Please enter a number for stock");
+			  return false;
+		   }
 	   if(stock<1)
 	  {
 		  alert("Stock cannot be less than 1. Please enter the stock you wish to add.");
@@ -77,7 +82,6 @@ body{
 
 </head>
 <body>
-<a href="index.jsp">HOME</a>
 	<center>
 		<table>
 			<tr>

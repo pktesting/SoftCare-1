@@ -7,7 +7,7 @@
 		
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		
-		if(session.getAttribute("adminLogin")==null || session.getAttribute("doctorLogin")==null)
+		if(session.getAttribute("adminLogin")==null && session.getAttribute("doctorLogin")==null)
 		{
 			response.sendRedirect("login.jsp");
 		}

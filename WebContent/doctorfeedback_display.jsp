@@ -25,7 +25,6 @@ body{
 </style>
 </head>
 <body>
-<a href="index.jsp">HOME</a>
 	<center>
 		<form action="DoctorFeedbackDisplayController" method="post"
 			onsubmit="return validate()">
@@ -60,7 +59,14 @@ body{
 		}else if(did<=0){
 			alert("Enter positive number");
 			return false;
-		}else{
+		}
+		if(isNaN(did))
+			{
+			alert("Please enter ONLY your doctor's number");
+			return false;
+			}
+		
+		else{
 			return true;
 		}
 	}

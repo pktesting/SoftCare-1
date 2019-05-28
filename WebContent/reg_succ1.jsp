@@ -4,22 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Enter Consultation Info</title>
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 <style>
-body{
+body {
 	background-image: url('images/main.jpg');
 	background-size: 100% 110%;
 	width: 100%;
-	height: 100vh;}
-	.custom {
-	font-family: Courier;
-	color: red;
-	font-size:20px;
+	height: 100vh;
 }
-
-marquee{
-color: white;}
+h1{
+color:white;
+}
 </style>
 </head>
 <body>
@@ -30,12 +25,10 @@ color: white;}
 <br>
 <br>
 <br>
-
-<center>
-<b>THE DATA HAS BEEN ADDED SUCCESSFULLY</b><br>
+<br>
+<h1>SUBMITTED SUCCESSFULLY</h1>
 <form action="index2.jsp" method="post">
 <input type="submit" value="HOME">
 </form>
-</center>
 </body>
 </html>

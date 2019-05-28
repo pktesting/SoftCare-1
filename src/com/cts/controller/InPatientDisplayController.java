@@ -2,6 +2,7 @@ package com.cts.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -36,10 +37,21 @@ public class InPatientDisplayController extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("InPatientDisplay.jsp");
-		request.setAttribute("InPatientDisplay", ips.displayRecords());
-		rd.forward(request, response);
 		
+//		if(request.getAttribute("doctorLogin")!= null)
+//		{
+//		RequestDispatcher rd = request.getRequestDispatcher("reg_succ1.jsp");
+//		request.setAttribute("InPatientDisplay", ips.displayRecords());
+//		rd.forward(request, response);
+//		}
+//		
+//		if(request.getAttribute("adminLogin")!= null)
+//		{
+			List<InPatient> list_ips =  ips.displayRecords();
+			RequestDispatcher rd = request.getRequestDispatcher("InPatientDisplay.jsp");
+			request.setAttribute("InPatientDisplay", list_ips);
+			rd.forward(request, response);
+//		}
 		
 	}
 }

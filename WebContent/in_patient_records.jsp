@@ -8,7 +8,7 @@
 		
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		
-		if(session.getAttribute("adminLogin")==null)
+		if(session.getAttribute("adminLogin")==null && session.getAttribute("doctorLogin")==null)
 		{
 			response.sendRedirect("login.jsp");
 		}
@@ -29,7 +29,6 @@ body{
 </head>
 <body>
 
-<a href="index.jsp">HOME</a>
 <div id ="wrap">
 	<table>
 			<tr>
@@ -44,7 +43,7 @@ body{
 				<tr>
 					<td><center><b>Name:</b></center></td>
 					<td>
-						<input type="text" name="patient_name" placeholder="Enter Patient Name">
+						<input type="text" name="patient_name" id="patient_name" placeholder="Enter Patient Name">
 					</td>
 					<br>
 					<table>
@@ -52,7 +51,7 @@ body{
 			           <col width="200">
 					<td><center><b>Age:</b></center></td>
 					<td>
-					<input type="text" name="patient_age" placeholder="Enter Patient Age">
+					<input type="text" name="patient_age" id="patient_age" placeholder="Enter Patient Age">
 					</td>
 			</table>
 			<table>
@@ -94,21 +93,21 @@ body{
 				
 					<tr>
 						<td><center><b>Op No:</b></center></td>
-						<td><input type="text" name="opno"></td>
+						<td><input type="text" name="opno" id="opno"></td>
 			</table>
 			<table>
 			<col width="650">
 			<col width="200">
 					
 						<td><center><b>Date of Admission:</b></center></td>
-						<td><input type="date" name="date_of_admission" style="width: 300px; height: 45px;"></td>
+						<td><input type="date" name="date_of_admission" id="date_of_admission" style="width: 300px; height: 45px;"></td>
 			</table>
 			<table>
 			<col width="650">
 			<col width="200">
 					
 						<td><center><b>Date of Discharge:</b></center></td>
-						<td><input type="date" name="date_of_discharge" style="width: 300px; height: 45px;"></td>
+						<td><input type="date" name="date_of_discharge" id="date_of_discharge" style="width: 300px; height: 45px;"></td>
 					</tr>
 			</table>
 			
@@ -165,12 +164,13 @@ body{
 		var opno = document.getElementById("opno").value;	
 		var date_of_admission = document.getElementById("date_of_admission").value;
 		var date_of_discharge = document.getElementById("date_of_discharge").value;
+		
 		if(name=="")
 		{
 			alert("Don't leave the NAME field empty!");
 			return false;
 		}
-		if(!name.match(/[A-Za-z]{3,}[\\s]*[A-Za-z]*/)==null)
+		if(name.match(/[A-Za-z]{3,}[\\s]*[A-Za-z]*/)==null)
 		{
 			alert("Enter only Alphabets for the NAME field");
 			return false;
@@ -180,8 +180,7 @@ body{
 		{
 			alert("Don't leave the AGE field empty!");
 			return false;
-		} 
-		//if (age.value<0)
+		}
 		if (isNaN(age)||age<1)
 		{
 			alert("Time travel has not been inventerd yet. Enter a positive number for AGE");

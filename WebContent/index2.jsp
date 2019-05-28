@@ -6,7 +6,7 @@
 		
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		
-		if(session.getAttribute("doctorLogin")==null || session.getAttribute("doctorLogin")==" ")
+		if(session.getAttribute("doctorLogin")==null && session.getAttribute("adminLogin")==null)
 		{
 			response.sendRedirect("login.jsp");
 		}
@@ -72,11 +72,11 @@
 							<div class="menu-1">
 								<ul>
 									
-									<li class ="active"><a href="InPatientDisplayController">Patient Info</a></li>
+									<li class ="active"><a href="in_patient_records.jsp">Enter Patient Info</a></li>
 									
 									<li class ="active"><a href="consultation_info_enter.jsp">Enter Consultation Information</a></li>
 									
-									<li class ="active"><a href="DoctorFeedbackDisplayController">Patient's Feedback</a></li> 
+									<li class ="active"><a href="doctorfeedback_display.jsp">Patient's Feedback</a></li> 
 									
 									<li class="active"><a href="Logout">Logout</a></li>
 									

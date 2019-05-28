@@ -66,7 +66,7 @@ body {
 
 			</table>
 		</form>
-		<center> <form action="index1.jsp" method="post">
+		<center> <form action="index.jsp" method="post">
 <input type="submit" value="HOME">
 </form>
 </center>

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+<%@page import="com.cts.bean.Login"%>
+<%@page import="java.io.Console"%>
+<%@page import="javafx.scene.control.Alert"%>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif; }
@@ -72,7 +76,7 @@ span.psw {
 <body>
 <center><h2>Login</h2></center>
 
-<form action="loginRegisterController">
+<form action="loginRegisterController" method="post">
   <div class="imgcontainer">
     <img src="images/logo2.png" alt="Avatar" class="avatar">
   </div>

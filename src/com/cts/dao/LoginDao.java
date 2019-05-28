@@ -4,5 +4,5 @@ import com.cts.bean.Login;
 
 public interface LoginDao {
 
-	public Boolean login(Login l);
+	public String login(Login l);
 }

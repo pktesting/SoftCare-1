@@ -50,7 +50,7 @@ public class DailyEntryDisplayController extends HttpServlet {
 		pw.println(de.getNo_of_drug2());*/
 		request.setAttribute("daentry", de);
 		
-		RequestDispatcher rd =request.getRequestDispatcher("NewFile.jsp");
+		RequestDispatcher rd =request.getRequestDispatcher("view_daily_entry.jsp");
 		
 		rd.forward(request, response);
 		

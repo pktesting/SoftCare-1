@@ -4,13 +4,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%
+		
+		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+		
+		if(session.getAttribute("adminLogin")==null)
+		{
+			response.sendRedirect("login.jsp");
+		}
+		
+%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Patient Records</title>
 
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 <style>
 body{
-	background-image: url('images/patient.jpg');
+	background-image: url('images/main.jpg');
 	background-size: 100% 110%;
 	width: 100%;
 	height: 100vh;
@@ -18,103 +28,127 @@ body{
 </style>
 </head>
 <body>
-<table>
-			<tr>
-				<h1>In - Patient Records</h1>
-			</tr>
-		</table>
 
-		<form action="InPatientController" onsubmit="return validate()" method="post">
+<a href="index.jsp">HOME</a>
+<div id ="wrap">
+	<table>
+			<tr>
+				<center><h1>In - Patient Records</h1></center>
+			</tr>
+	</table>
+
+		<form action="InPatientController" onsubmit="return validate()">
 			<table>
+			<col width="650">
+			<col width="200">
 				<tr>
-					<td><b>Name:</b></td>
+					<td><center><b>Name:</b></center></td>
 					<td>
-						<input type="text" name="patient_name" id="patient_name" placeholder="Enter Patient Name">
+						<input type="text" name="patient_name" placeholder="Enter Patient Name">
 					</td>
-					
-					<td><b>Age:</b></td>
+					<br>
+					<table>
+					   <col width="650">
+			           <col width="200">
+					<td><center><b>Age:</b></center></td>
 					<td>
-					<input type="text" name="patient_age" id="patient_age" placeholder="Enter Patient Age">
+					<input type="text" name="patient_age" placeholder="Enter Patient Age">
 					</td>
-					
-					<td><b>Patient Type:</b></td>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
+					<td><center><b>Patient Type:</b></center>></td>
 					<td>
-						<select name="patientType">
+						<select name="patientType" style="width: 300px; height: 45px;">
 							<option value="student">Student</option>
 							<option value="beneficiary">Beneficiary</option>
 						</select>
-					</td>	
+					</td>
+			</table>	
 				
 				</tr>
-				</table>
 				<br>
-				<table>
+			<table>
+			<col width="650">
+			<col width="200">
 				<tr>
-					<td><b>Gender:</b></td>
+					<td><center><b>Gender:</b></center></td>
 					<td>
-						<select  name="gender">
-      						<option id="gender" value="Male">Male</option>
-      						<option id="gender" value="Female">Female</option>
-      						<option id="gender" value="Others">Others</option>
-    					</select>
+					
+						<label class="radio-inline" >
+      						<input type="radio" name="gender" value="Male">Male
+    					</label>
+    					<label class="radio-inline">
+      						<input type="radio" name="gender" value="Female">Female
+    					</label>
+    					<label class="radio-inline">
+      						<input type="radio" name="gender" value="Others">Others
+    					</label>
 					</td>
 				</tr>
-				</table>
-				<table>
-				<br>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
+				
 					<tr>
-						<td><b>Op No:</b></td>
-						<td><input type="text" name="opno" id="opno"></td>
+						<td><center><b>Op No:</b></center></td>
+						<td><input type="text" name="opno"></td>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
 					
-						<td><b>Date of Admission:</b></td>
-						<td><input type="date" name="date_of_admission" id="date_of_admission"></td>
+						<td><center><b>Date of Admission:</b></center></td>
+						<td><input type="date" name="date_of_admission" style="width: 300px; height: 45px;"></td>
+			</table>
+			<table>
+			<col width="650">
+			<col width="200">
 					
-						<td><b>Date of Discharge:</b></td>
-						<td><input type="date" name="date_of_discharge" id="date_of_discharge"></td>
+						<td><center><b>Date of Discharge:</b></center></td>
+						<td><input type="date" name="date_of_discharge" style="width: 300px; height: 45px;"></td>
 					</tr>
-				</table>
-				<br><br>
-				<table>
+			</table>
+			
+			<table>
+			<col width="650">
+			
+			
+			
 					<tr>
-						<td><b>Diagnosis:</b></td>
-					</tr>
-					<tr>
-						<td>
+						<td><center><b>Diagnosis:</b></center></td>
+	<td>
+							<center>
 								<textarea name="paragraph_text" cols="40" rows="5"></textarea>
+							</center>
 						</td>
 					</tr>
-				</table>
-				<br>
-				<table>
-				<tr>
-					<td><b>Disease Severeness:</b></td>
-					<td><input type="radio" id="ward1" name="ward" value="1" onclick="ShowHideDiv()">Yes</td>
-					<td><input type="radio" id="ward2" name="ward" value="0" onclick="ShowHideDiv()">No</td>
-				</tr>
 				
-				<tr>
-				<td>
-				<div id="dv" style="display: none;">
-				<table>
-				<tr>
-				<td><b>Isolation Ward No:</b></td>
-				<td><input type="text" id="ward" name="ward"></td>
-				</tr>
-				</table>
-				<br>
-				</div>
+			</table>
 				
+			
+				<br>
+			</div>
+				</table>
+				
+				
+				<center>
 				<tr>
+				
 					<td>
-						<input type="submit" value="Submit">
+						<input type="submit" name="submit" value="Submit" align="center" style="width: 100px; height: 50px; color: blue ">
 					</td>
 					
-					<td><a href="patient_records.jsp"><b>Back</b></a></td>
+	
 
 				</tr>
-
-
-			</table>
+                </center>
+             
+			
+		</form>
+	</div>
 </body>
 <script>
 	function ShowHideDiv() {
@@ -122,6 +156,7 @@ body{
 		var dv= document.getElementById("dv");
 		dv.style.display = chkEmp.checked ? "block" : "none";
 	}
+	
 	
 	function validate() 
 	{
@@ -174,7 +209,7 @@ body{
 		}
 		if(date_of_admission>date_of_discharge)
 		{
-			alert("Date of Admission should be BEFORE Date of Discharge. Please use your COMMON SENSE");	
+			alert("Date of Admission should be BEFORE Date of Discharge.");	
 			return false;
 		}
 	}

@@ -21,7 +21,7 @@ public class RegistrationRecordsDaoImpl implements RegistrationRecordsDao {
 		int result = 0;
 		
 		try {
-			s = con.prepareStatement("insert into TBL_REGISTRATION12 values(?,?,?,?,?,?,?,?,?,?)");
+			s = con.prepareStatement("insert into tbl_patient_registration values(?,?,?,?,?,?,?,?)");
 
 			int max = 10000;
 			int min = 1;
@@ -37,12 +37,10 @@ public class RegistrationRecordsDaoImpl implements RegistrationRecordsDao {
 			s.setString(2,r.getOpno());
 			s.setString(3, r.getName());
 			s.setLong(4, r.getAge());
-			s.setString(5, r.getSex());
-			s.setString(6, r.getPhone());
+			s.setInt(5, r.getPhone());
+			s.setString(6, r.getSex());
 			s.setString(7, r.getAddress());
-			s.setString(8, r.getDept());
-			s.setString(9, r.getPatient());
-			s.setString(10, r.getPass());
+			s.setString(8, r.getPass());
 
 			result = s.executeUpdate();
 			

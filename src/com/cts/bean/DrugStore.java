@@ -1,6 +1,6 @@
 package com.cts.bean;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class DrugStore
 {

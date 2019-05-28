@@ -78,6 +78,7 @@
 
 	font-size: 20px;
 	font-family: 'Open Sans', sans-serif;
+	font-color: #ffffff;
 }
 
 .text h1{
@@ -85,11 +86,13 @@
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700px;
 	margin:14px 0px;
+	font-color: #ffffff;
 }
 
 .text h3{
 	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
+	font-color: #ffffff;
 }
 
 
@@ -374,4 +377,7 @@ button:hover {
 .wrap { 
 	width: 900px; 
 	margin: 0 auto; 
+}
+h1,b,h2,h3{
+	color: #ffffff;
 }

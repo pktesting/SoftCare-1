@@ -6,7 +6,7 @@ public class Registration {
 	private int age;
 	private String sex;
 	private String email;
-	private String phone;
+	private int phone;
 	private String address;
 	private String dept;
 	private String patient;
@@ -17,7 +17,7 @@ public class Registration {
 		super();
 	}
 
-	public Registration(String opno, String name, int age, String sex, String email, String phone, String address, String dept,
+	public Registration(String opno, String name, int age, String sex, String email, int phone, String address, String dept,
 			String patient, String pass, String retype) {
 		super();
 		this.opno = opno;
@@ -73,11 +73,11 @@ public class Registration {
 		this.email = email;
 	}
 
-	public String getPhone() {
+	public int getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
 

@@ -1,6 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+	<%
+		
+		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+		
+	if(session.getAttribute("patientLogin")==null || session.getAttribute("patientLogin")==" ")
+	{
+		response.sendRedirect("login.jsp");
+	}
+		
+ %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Soft Care</title>
@@ -61,38 +71,11 @@
 							<div class="menu-1">
 								<ul>
 									
-									<li class="active"><a href="login.jsp">Login</a></li>
-
-									<li class="has-dropdown active">
-										<a href="#">In - Records</a>
-										<ul class="dropdown" style="display: none;">
-											<li><a href="in_patient_records.jsp">Add In-Records</a></li>
-											<li><a href="InPatientDisplayController">View In-Records</a></li>
-											
-										</ul>
-									</li>
+									<li class ="active"><a href="consultation_info_display.jsp">View Consultation Info</a></li>
 									
-									
-									<li class="has-dropdown active">
-										<a href="#">Daily Entries</a>
-										<ul class="dropdown" style="display: none;">
-											<li><a href="insert_daily_entry.jsp">Insert Entries</a></li>
-											<li><a href="search_daily_entry.jsp">Search Entries</a></li>
-											
-										</ul>
-									</li>
-									
-									
-									<li class="has-dropdown active">
-										<a href="#">Drug Store Entries</a>
-										<ul class="dropdown" style="display: none;">
-											<li><a href="drug_entry.jsp">Insert Entries</a></li>
-											<li><a href="stock_details.jsp">Search Entries</a></li>
-											
-										</ul>
-									</li>
-									
-									<li class="active"><a href="Logout">Logout</a></li>
+									<li class ="active"><a href="doctor_feedback.jsp">Please Leave A FeedBack for Your Doctor</a></li>
+									 
+									 <li class="active"><a href="Logout">Logout</a></li>
 									
 									
 									

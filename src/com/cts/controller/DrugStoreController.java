@@ -1,13 +1,9 @@
 package com.cts.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cts.bean.DrugStore;
-import com.cts.bean.InPatient;
 import com.cts.service.DrugRecordsServiceImpl;
 import com.cts.service.DrugStoreRecordsService;
 
@@ -46,13 +41,8 @@ public class DrugStoreController extends HttpServlet {
 		drug.setDrugname(request.getParameter("dname"));		
 		drug.setIn_stock(Integer.parseInt(request.getParameter("stock")));
 		
-		try {
-			drug.setExp_date1(df.parse(request.getParameter("edate1")));
-			drug.setExp_date2(df.parse(request.getParameter("edate2")));
-		} catch (ParseException e)
-		{
-			e.printStackTrace();
-		}
+		drug.setExp_date1(Date.valueOf(request.getParameter("edate1")));
+		drug.setExp_date2(Date.valueOf(request.getParameter("edate2")));
 		
 		
 		System.out.println(drug.getDrugname());
@@ -61,6 +51,8 @@ public class DrugStoreController extends HttpServlet {
 		System.out.println(drug.getExp_date2());
 		
 		System.out.println(drugservice.addRecords(drug));
+		
+		response.sendRedirect("stock_details.jsp");
 			
 	}
 

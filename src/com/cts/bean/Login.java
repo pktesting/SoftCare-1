@@ -4,6 +4,7 @@ public class Login {
 
 	private String name;
 	private String pass;
+	
 	public String getName() {
 		return name;
 	}

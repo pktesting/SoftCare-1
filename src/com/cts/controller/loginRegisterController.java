@@ -1,7 +1,6 @@
 package com.cts.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import com.cts.bean.Login;
 import com.cts.service.LoginRecords;
 import com.cts.service.LoginRecordsServiceImpl;
-import com.cts.service.RegistrationRecordsServiceImpl;
 
 @WebServlet("/loginRegisterController")
 public class loginRegisterController extends HttpServlet {
@@ -25,30 +23,65 @@ public class loginRegisterController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		lr = new LoginRecordsServiceImpl();
 	}
-
-	public loginRegisterController() {
-		super();
-
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+	
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Login login = new Login();
-		login.setName(request.getParameter("name"));
-		login.setPass(request.getParameter("pass"));
-		int a = 10;
-		if (lr.checkLogin(login)) {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		login.setName(request.getParameter("uname"));
+		login.setPass(request.getParameter("psw"));
+		
+		System.out.println(login.getName());
+		System.out.println(login.getPass());
+		
+		if (lr.checkLogin(login) == "admin")
+		{
+		
 			HttpSession session = request.getSession();
-			session.setAttribute("session_name", a);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("session.jsp");
-	        try {
-				dispatcher.forward(request, response);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+			session.setAttribute("adminLogin", login);
+			dispatcher.forward(request, response);
+	        
 			System.out.println("login Successfull");
-		} else {
+		
+		}
+		else if (lr.checkLogin(login) == "doctor")
+		{
+		
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("doctorLogin", login);
+			response.sendRedirect("index2.jsp");
+	        
+			System.out.println("login Successfull");
+		
+		}
+		else if (lr.checkLogin(login) == "patient")
+		{
+		
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("patientLogin", login);
+			response.sendRedirect("index1.jsp");
+	        
+			
+			
+			System.out.println("login Successfull");
+		
+		}
+		else {
 			System.out.println("error");
+			response.sendRedirect("login.jsp");
 		}
 	}
 

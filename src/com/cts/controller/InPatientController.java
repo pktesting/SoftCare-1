@@ -80,10 +80,7 @@ public class InPatientController extends HttpServlet {
 
 		System.out.println(ips.addRecords(inpatient));
 		
-
-		HttpSession session = request.getSession(false);
-		if(session != null)
-			session.invalidate();
+		response.sendRedirect("InPatientDisplayController");
 
 	}
 

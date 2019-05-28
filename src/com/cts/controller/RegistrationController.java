@@ -46,7 +46,7 @@ public class RegistrationController extends HttpServlet {
 		
 		registration.setSex(request.getParameter("sex"));
 		
-		registration.setPhone(request.getParameter("number"));
+		registration.setPhone(Integer.parseInt(request.getParameter("number")));
 		
 		registration.setAddress(request.getParameter("address"));
 		
@@ -61,10 +61,12 @@ public class RegistrationController extends HttpServlet {
 		if(rrs.addRecords(registration)){
 			System.out.println("Registration Done!");
 //			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("reg_succ.jsp");
 		}else{
 			System.out.println("Error");
 		}
+		
+		
 		
 	}
 	

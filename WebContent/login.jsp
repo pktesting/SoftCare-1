@@ -3,7 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif; }
+
 form {border: 3px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
@@ -69,10 +70,9 @@ span.psw {
 </style>
 </head>
 <body>
-
 <center><h2>Login</h2></center>
 
-<form action="loginRegister">
+<form action="loginRegisterController">
   <div class="imgcontainer">
     <img src="images/logo2.png" alt="Avatar" class="avatar">
   </div>
@@ -92,7 +92,7 @@ span.psw {
 <table>
 <center>
    
-    <span class="psw"><h4>Don't have account yet?</h4><a href="register.jsp"><h3>
+    <span class="psw"><h4>Don't have account yet?</h4><a href="RegistrationType.jsp"><h3>
     <strong><font color="red">Register Here</font></strong></h3></a></span>
 </center>
 </table>

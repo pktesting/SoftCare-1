@@ -72,7 +72,7 @@ public class InPatientRecordsDaoImpl implements InPatientRecordsDao
 	@Override
 	public List<InPatient> displayRecords()
 	{
-		Connection con1 = DBUtil.getConnection();
+		Connection con = DBUtil.getConnection();
 		PreparedStatement s = null;
 		ResultSet res = null;
 		if(res == null)
@@ -84,7 +84,7 @@ public class InPatientRecordsDaoImpl implements InPatientRecordsDao
 		
 		try {
 			
-			s = con1.prepareStatement("select * from TBL_STUDENT_IN_PATIENT");
+			s = con.prepareStatement("select * from TBL_STUDENT_IN_PATIENT");
 			System.out.println("execute update = " +s.executeUpdate());
 			if(s.execute())
 			{
@@ -95,7 +95,7 @@ public class InPatientRecordsDaoImpl implements InPatientRecordsDao
 				InPatient ip = new InPatient();
 				
 				ip.setOpno(res.getString("OPNO"));
-				ip.setPatient_name(res.getString("NAME"));
+				ip.setPatient_name(res.getString("STUDENT_NAME"));
 				ip.setAge(res.getInt("AGE"));
 				ip.setGender(res.getString("GENDER"));
 				ip.setDate_of_admission(res.getDate("DATE_OF_ADMISSION"));
@@ -103,22 +103,39 @@ public class InPatientRecordsDaoImpl implements InPatientRecordsDao
 				ip.setDiagnosis(res.getString("DIAGNOSIS"));
 				ip.setPatient_type("Student");
 				
-				System.out.println("ip = " + ip);			
+				System.out.println("ip = " + ip);
+				
 				patient_list.add(ip);
 				
 				ip = null;
 			}	
 			
-			while(res.next())
-			{
-				res.deleteRow();
-			}
+			s = null;
+			res = null;
 			
-			if(res !=null)
+			s = con.prepareStatement("select * from tbl_beneficiary_in_patient");
+			System.out.println("execute update = " +s.executeUpdate());
+			if(s.execute())
 			{
-				res=null;
-				//rs.close();
-				System.gc();
+				res = s.getResultSet();
+			}
+			while(res.next())
+			{		
+				InPatient ip = new InPatient();
+				
+				ip.setOpno(res.getString("OPNO"));
+				ip.setPatient_name(res.getString("BENEFICIARY_NAME"));
+				ip.setAge(res.getInt("AGE"));
+				ip.setGender(res.getString("GENDER"));
+				ip.setDate_of_admission(res.getDate("DATE_OF_ADMISSION"));
+				ip.setDate_of_discharge(res.getDate("DATE_OF_DISCHARGE"));
+				ip.setDiagnosis(res.getString("DIAGNOSIS"));
+				ip.setPatient_type("Benficiary");
+				
+				System.out.println("ip = " + ip);			
+				patient_list.add(ip);
+				
+				ip = null;
 			}
 			
 			s.close();
@@ -126,16 +143,6 @@ public class InPatientRecordsDaoImpl implements InPatientRecordsDao
 		catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally {
-			
-			try {
-				con1.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-				
 		}
 		
 		System.out.println("Inside DAO:");

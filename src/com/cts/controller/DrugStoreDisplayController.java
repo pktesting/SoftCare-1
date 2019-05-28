@@ -53,7 +53,7 @@ public class DrugStoreDisplayController extends HttpServlet {
 //			}
 			
 			request.setAttribute("drug", dx);
-			RequestDispatcher rd=request.getRequestDispatcher("Display.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("Display_drug_details.jsp");
 			rd.forward(request, response);
 			
 			

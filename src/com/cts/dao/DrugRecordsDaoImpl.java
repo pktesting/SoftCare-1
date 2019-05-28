@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.cts.bean.DrugStore;
@@ -25,7 +25,7 @@ public class DrugRecordsDaoImpl implements DrugStoreRecordsDao {
 
 	@Override
 	public boolean addRecords(DrugStore ds) {
-		Date date = Calendar.getInstance().getTime();
+		
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
 		df.setLenient(false);
@@ -33,17 +33,15 @@ public class DrugRecordsDaoImpl implements DrugStoreRecordsDao {
 
 		try {
 
-			ps = con.prepareStatement("insert into table_Mainstore values(?,?,?,?)");
+			ps = con.prepareStatement("insert into tbl_Mainstore values(?,?,?,?)");
 
 			String drug_name = ds.getDrugname();
 			int in_stock = ds.getIn_stock();
-			String ex_date1 = df.format(ds.getExp_date1());
-			String ex_date2 = df.format(ds.getExp_date2());
-
+			
 			ps.setString(1, drug_name);
 			ps.setInt(2, in_stock);
-			ps.setString(3, ex_date1);
-			ps.setString(4, ex_date2);
+			ps.setDate(3, ds.getExp_date1());
+			ps.setDate(4, ds.getExp_date2());
 
 			result = ps.executeUpdate();
 
@@ -65,6 +63,7 @@ public class DrugRecordsDaoImpl implements DrugStoreRecordsDao {
 
 			ps = con.prepareStatement("select *from table_Mainstore where drug_name=?");
 			ps.setString(1, drugname);
+		
 			ResultSet res = ps.executeQuery();
 			while (res.next()) {
 
@@ -78,6 +77,7 @@ public class DrugRecordsDaoImpl implements DrugStoreRecordsDao {
 				ds.setIn_stock(stock);
 				ds.setExp_date1(exd1);
 				ds.setExp_date2(exd2);
+			
 				dlist.add(ds);
 
 //				System.out.println(dname);

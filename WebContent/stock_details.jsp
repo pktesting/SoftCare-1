@@ -5,25 +5,70 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Stock Details</title>
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<style>
+body{
+	background-image: url('images/main.jpg');
+	background-size: 100% 110%;
+	width: 100%;
+	height: 100vh;
+</style>
+
+	<script type="text/javascript">
+	function validate() {
+		var drug_name = document.getElementById("drug_name").value;
+		 var valid="[A-Z]{1}[a-z 0-9 -]*";
+		 if(drug_name=="")
+		  {
+			  alert("Drug_Name must be filled out");
+			  return false;
+		  }
+		  else if(!drug_name.match(valid))
+		  {
+			  alert("Start With Capital Alphabet");
+			  return false;
+		  }	 
+		  else
+			  {
+			  return true;
+			  }
+		  }
+		  </script>
+		  	  
 </head>
+
 <body>
+<a href="index.jsp">HOME</a>
 <center>
-<form action="DrugStoreDisplayController">
+<form action="DrugStoreDisplayController" method="post"
+			onsubmit="return validate()">
 		<table>
 		<tr>
 		<td>
-		<h3>Stock Details</h3>
+		<center>
+		<h1>Stock Details</h1>
+		<br><br><br>
+		</center>
+		<center>
 		</td>
+		
 		</tr>
+		
 			<tr>
-				<td><b>Enter Drug Name:</b><input type="text" name="drug_name">
-				</td>
+			
+				<td><b>Enter Drug Name:</b><input type="text" name="drug_name" id="drug_name">
+				     				</td>
 			</tr>
+			</table>
+			<table>
+			<center>
 			<tr>
-			<td><input type="submit" value="Search"></td>
+			<td><input type="submit" value="Search" style="width: 100px; height: 50px; color: blue"></td>
 			</tr>
+			</center>
 		</table>
 	</form>
-	</center>
+	
 </body>
+</center>
 </html>

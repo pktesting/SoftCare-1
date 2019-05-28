@@ -12,12 +12,8 @@ public class LoginRecordsServiceImpl implements LoginRecords {
 	}
 
 	@Override
-	public boolean checkLogin(Login l) {
-		if (ldao.login(l)) {
-			return true;
-		} else {
-			return false;
-		}
+	public String checkLogin(Login l) {
+		return ldao.login(l);
 	}
 
 }

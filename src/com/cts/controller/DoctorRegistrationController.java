@@ -9,16 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cts.bean.DoctorInfo;
+import com.cts.service.DoctorInfoImpl;
+import com.cts.service.DoctorInfoService;
 
 
 @WebServlet("/DoctorRegistrationController")
 public class DoctorRegistrationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DoctorInfo docInfo;
-
+	DoctorInfoService dis;
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		docInfo = new DoctorInfo();
+		dis = new DoctorInfoImpl();
 	}
 
 
@@ -36,8 +39,9 @@ public class DoctorRegistrationController extends HttpServlet {
 		docInfo.setDoctorEmail(request.getParameter("doctorEmail"));
 		docInfo.setDoctorPass(request.getParameter("doctorPass"));
 		
+		dis.addDoctorInfo(docInfo);
 		
-		
+		response.sendRedirect("reg_succ.jsp");
 	}
 
 }

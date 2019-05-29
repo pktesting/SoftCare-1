@@ -4,7 +4,27 @@
 <%@page import="javafx.scene.control.Alert"%>
 <html>
 <head>
+<%
 
+	
+
+	if(request.getAttribute("logu") == null)
+	{
+		
+	}
+	else if(request.getAttribute("logu") != null)
+	{
+	Login log = (Login) request.getAttribute("logu");
+	
+		if(log.getName().equals("unsuccessfull"))
+		{%>
+		<script type="text/javascript">
+			alert("Login Unsuccessfull");
+		</script>
+		<%}
+	}
+	
+%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif; }

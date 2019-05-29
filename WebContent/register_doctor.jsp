@@ -21,7 +21,7 @@ function validate(){
 		alert("ID should be a 3-digit positive number");
 		return false;
 		}
-	if(did<=99)
+	if(did<=99 || did.length>3)
 		{
 		alert("ID should be a 3-digit positive number");
 		return false;

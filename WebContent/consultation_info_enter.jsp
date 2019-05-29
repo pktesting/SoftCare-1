@@ -1,9 +1,12 @@
+<%@page import="com.cts.bean.Login"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <%
+
+		Login log = null;
 		
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		
@@ -11,6 +14,11 @@
 		{
 			response.sendRedirect("login.jsp");
 		}
+		if(session.getAttribute("doctorLogin")!=null)
+		{
+			log = (Login) session.getAttribute("doctorLogin");
+		}
+		
 		
 %>
 <script type="text/javascript">
@@ -92,6 +100,7 @@ color: white;}
 </head>
 
 <body>
+
 <form action="ConInfoController" method="post" onsubmit="return validate()">
 	<center>
 		<table>
@@ -99,8 +108,8 @@ color: white;}
 				<center><h1>Enter Consultation Information</h1></center>
 			</tr>
 			<tr>
-				<td><b>Doctor ID:</b></td>
-				<td><input type="text" name="docId" id="docId"></td>
+				<td><b>Doctor Name:</b></td>
+				<td><h2><%=log.getName() %></h2></td>
 			</tr>
 			<tr>
 				<td><b>OPNO:</b></td>
@@ -117,6 +126,7 @@ color: white;}
 			<br>
 			<tr>
 				<td><input type="submit" value="Register"></td>
+				<td><a href="index2.jsp"><b>HOME</b></a></td>
 			</tr>
 		</table>
 	</center>

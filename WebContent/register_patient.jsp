@@ -115,7 +115,7 @@ body{
 			alert("Please ENTER a POSITIVE NUMBER for age!");
 			return false;
 		}
-		if(pnum=="" || pnum<999999999)
+		if(pnum=="" || pnum<999999999 || pnum.length>10)
 		{
 			alert("Please ENTER a 10 DIGIT NUMBER for PHONE NUMBER!");
 			return false;

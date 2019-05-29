@@ -38,11 +38,12 @@ public class DailyEntryController extends HttpServlet {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		sdf.setLenient(false);
-
+		java.util.Date utilDate = new java.util.Date();
+		java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 		DailyEntry de = new DailyEntry();
 		try {
 			de.setPatient_type(request.getParameter("Patient_type"));
-			de.setDate(Date.valueOf(request.getParameter("date")));
+			de.setDate(sqlDate);
 			de.setOpno(request.getParameter("Opno"));
 			de.setDrug1(request.getParameter("Drug1"));
 			de.setNo_of_drug1(Integer.parseInt(request.getParameter("No_of_drug1")));

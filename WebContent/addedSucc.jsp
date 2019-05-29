@@ -32,7 +32,7 @@ color: white;}
 <br>
 
 <center>
-<b>THE DATA HAS BEEN ADDED SUCCESSFULLY</b><br>
+<h1><b>THE DATA HAS BEEN ADDED SUCCESSFULLY</b></h1><br>
 <form action="index2.jsp" method="post">
 <input type="submit" value="HOME">
 </form>

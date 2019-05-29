@@ -24,6 +24,8 @@ public class Login {
 	}
 	public Login() {
 		super();
+		this.name="unsuccessfull";
+		this.pass="unsuccessfull";
 	}
 	
 	

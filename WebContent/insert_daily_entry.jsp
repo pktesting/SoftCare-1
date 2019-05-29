@@ -22,6 +22,9 @@ body {
 	width: 100%;
 	height: 100vh;
 }
+td{
+color:white;
+}
 </style>
 </head>
 
@@ -56,8 +59,11 @@ body {
 				</tr>
 				<tr>
 					<td><b>Date:</b></td>
-					<td><input type="date" name="date" id="date"
-						style="width: 300px; height: 45px;"></td>
+					<td>
+						<h2>
+							<script> document.write(new Date().toLocaleDateString()); </script>
+						</h2>
+					</td>
 				</tr>
 				<tr>
 					<td><b>Drug1:</b></td>
@@ -119,6 +125,10 @@ body {
 			alert("Drug Name1 should start with a CAPITAL LETTER followed by ALPHANUMERIC CHARACTERS");
 			return false;
 		}
+		if (drug1.length>9) {
+			alert("Drug Name1 must not contain more than 10 Alphanumeric Characters");
+			return false;
+		}
 		if (noofdrug1 == "") {
 			alert("Number of drugs cannot be blank");
 			return false;
@@ -130,6 +140,10 @@ body {
 
 		if (drug2 == "") {
 			alert("Drug Name2 is blank");
+			return false;
+		}
+		if (drug2.length>9) {
+			alert("Drug Name2 must not contain more than 10 Alphanumeric Characters");
 			return false;
 		}
 		if (drug2.match(/[A-Z]{1}[A-Za-z0-9]*/) == null) {
